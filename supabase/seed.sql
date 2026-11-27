@@ -1,0 +1,2 @@
+-- Seed data for local development (Phase 1 will populate campus desks and categories)
+-- Do not commit secrets or real user credentials here.

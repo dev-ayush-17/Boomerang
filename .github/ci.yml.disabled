@@ -1,0 +1,43 @@
+name: Harness CI
+
+on:
+  push:
+    branches: ["main", "master", "feat/*"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  verify:
+    name: Run Harness Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install web dependencies
+        run: npm --prefix apps/web ci
+
+      - name: Install api dependencies
+        run: uv sync --project apps/api
+
+      - name: Run verification script
+        run: bash ./scripts/verify.sh

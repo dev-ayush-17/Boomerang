@@ -1,0 +1,17 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom Neo-Brutalist Focus Ring */
+*:focus-visible {
+  outline: 3px solid var(--ink) !important;
+  outline-offset: 2px !important;
+}

@@ -1,0 +1,13 @@
+# Rule: Frontend (activation: Glob `apps/web/**`)
+- TypeScript strict. No `any` without a comment explaining why.
+- Server Components by default; `"use client"` only when needed.
+- Forms: React Hook Form + Zod. Server data: TanStack Query. No ad-hoc fetch-in-useEffect.
+- Every screen handles loading, empty, error and offline states.
+- Visual source of truth: Stitch (layout/content) + `docs/05-DESIGN_SYSTEM.md` (treatment). Conflicts go to `docs/design/design-deltas.md`; never silently decide.
+- Colors/shadows/borders come ONLY from tokens (`styles/tokens.css`). No hex values in components (verify.sh enforces).
+- Max one skeuomorphic "hero object" per screen; brutalism is the skeleton.
+- Components never import mock data. Use `lib/data/` interfaces; mocks live in `lib/mock/` behind `NEXT_PUBLIC_USE_MOCKS`.
+- A screen may not invent fields. Missing field in the domain model → stop and raise it.
+- Accessibility: labelled inputs, visible focus, 44px targets, AA contrast, status shown as text not only color/stamp.
+- Never render PII beyond what the screen needs. No phone numbers on public pages.
+- Tests: Vitest for logic/components; Playwright only for the critical flow listed in docs/09.

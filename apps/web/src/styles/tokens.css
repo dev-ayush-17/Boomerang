@@ -1,0 +1,34 @@
+:root {
+  /* Surface & Base */
+  --paper: #F4EFE6;
+  --ink: #111111;
+  --white: #FFFFFF;
+
+  /* Semantic status colors (05-DESIGN_SYSTEM + Stitch) */
+  --found: #3DDC97;
+  --lost: #FF6B4A;
+  --claim: #4D7CFE;
+  --warn: #FFD93D;
+  --stamp: #D62828;
+
+  /* Stitch secondary accent surfaces */
+  --desk-badge: #7A541F;
+  --desk-surface: #FBF5EA;
+  --on-desk-surface: #523711;
+
+  /* Borders & Radii */
+  --border-1: 2px solid var(--ink);
+  --border-2: 3px solid var(--ink);
+  --radius: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Hard Brutalist Shadows (no blur) */
+  --shadow-1: 4px 4px 0 var(--ink);
+  --shadow-2: 8px 8px 0 var(--ink);
+  --shadow-press: 1px 1px 0 var(--ink);
+
+  /* Fonts */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
