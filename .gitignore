@@ -51,4 +51,9 @@ Thumbs.db
 !.vscode/settings.json
 .idea/
 
-.agents/mcp_config.json
+# Internal Agent, Docs, Scripts & CI tooling (kept local only)
+docs/
+scripts/
+.agents/
+.github/
+prompts/
